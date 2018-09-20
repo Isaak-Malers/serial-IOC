@@ -9,7 +9,8 @@ var serialIOC = function() {
 	console.log("ioc instantiated");
 
 	this.behaviour = this._behaviour.serial;
-	this.serialNameSpace = {};
+	this.NameSpace = {};
+	this.registered = {};
 
 	//start off with a promise that imediatly resolves true:
 	this.pending = new Promise(function (resolve){
@@ -23,7 +24,7 @@ var serialIOC = function() {
 serialIOC.prototype.register = function(signature, toRegister){
 	//to start off with, handle the case where toRegister is a function.
 	if(toRegister instanceof Function){
-		this.serialNameSpace[signature] = toRegister;
+		this.NameSpace[signature] = toRegister;
 	}
 	else{
 		//TODO: implement injection for objects.
@@ -32,7 +33,7 @@ serialIOC.prototype.register = function(signature, toRegister){
 }
 
 serialIOC.prototype.resolve = function(){
-	return this.serialNameSpace;
+	return this.NameSpace;
 }
 
 module.exports = serialIOC;
