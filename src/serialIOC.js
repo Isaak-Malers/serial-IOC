@@ -10,7 +10,6 @@ var serialIOC = function() {
     // Build the debugger first so it can be used everywhere else.
     this.logger = new Logger("debug");
 
-
     // Set up 'Dry-run' feature:
     this.dryRun = false;
     this.logger.log("dryRun is set to false by default", "trace");
