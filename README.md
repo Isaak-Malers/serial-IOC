@@ -1,2 +1,4 @@
 # serial-IOC
-A dependency injection library for java-script which can automatically provide synchronous API's for registered objects.
+
+
+A spin off of my automated test focued task scheduling library.  Adds a "step" keyword which melds nicly into the jasmine "it" and "describe" features.
